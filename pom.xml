@@ -79,7 +79,7 @@
           <uniqueVersion>true</uniqueVersion>
       </snapshotRepository>
   </distributionManagement>
-  -->
+  
   <distributionManagement>
     <repository>
       <id>nexus-releases</id>
@@ -93,6 +93,7 @@
       <uniqueVersion>true</uniqueVersion>
     </snapshotRepository>
   </distributionManagement>
+  -->
 
   <dependencyManagement>
     <dependencies>
@@ -305,7 +306,7 @@
       <dependency>
         <groupId>com.aliyun</groupId>
         <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
-        <version>1.0.0-SANPSHOT</version>
+        <version>1.0.0</version>
       </dependency>
       <!-- https://mvnrepository.com/artifact/com.aliyun.mns/aliyun-sdk-mns -->
       <dependency>
