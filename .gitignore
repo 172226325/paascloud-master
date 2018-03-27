@@ -20,3 +20,31 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+*.iml
+.idea
+database-and-jar.zip
+paascloud-common/paascloud-common-base/target/
+paascloud-common/paascloud-common-config/target/
+paascloud-common/paascloud-common-core/target/
+paascloud-common/paascloud-common-util/target/
+paascloud-common/paascloud-common-zk/target/
+paascloud-common/paascloud-security-app/target/
+paascloud-common/paascloud-security-core/target/
+paascloud-common/paascloud-security-feign/target/
+paascloud-discovery/target/
+paascloud-eureka/target/
+paascloud-monitor/target/
+paascloud-provider-api/paascloud-provider-omc-api/target/
+paascloud-provider-api/paascloud-provider-opc-api/target/
+paascloud-provider-api/paascloud-provider-sdk-api/target/
+paascloud-provider-api/paascloud-provider-tpc-api/target/
+paascloud-provider-api/paascloud-provider-uac-api/target/
+paascloud-provider/paascloud-provider-mdc/target/
+paascloud-provider/paascloud-provider-omc/target/
+paascloud-provider/paascloud-provider-opc/target/
+paascloud-provider/paascloud-provider-uac/build/
+paascloud-provider/paascloud-provider-uac/target/
+paascloud-provider/target/
+paascloud-provider/paascloud-provider-tpc/target/
+paascloud-zipkin/target/
