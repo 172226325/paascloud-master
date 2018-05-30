@@ -109,7 +109,8 @@ clean install -DskipTests
 
 
 
-
+npm install (这个如果失败的话，执行npm cache clean --force之后再重试)
+npm run dev
 
 
 
