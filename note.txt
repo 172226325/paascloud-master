@@ -3,6 +3,7 @@
 执行sql文件
 
 配置域名：
+修改：C:\Windows\System32\drivers\etc\hosts
 
 127.0.0.1 dev-login.paascloud.net
 127.0.0.1 dev-admin.paascloud.net
@@ -19,11 +20,11 @@
 127.0.0.1 paascloud-provider-opc
 
 
-192.168.241.21 paascloud-db-mysql
-192.168.241.21 paascloud-db-redis
-192.168.241.21 paascloud-mq-rabbit
-192.168.241.21 paascloud-mq-rocket
-192.168.241.21 paascloud-provider-zk
+192.168.137.4 paascloud-db-mysql
+192.168.137.172 paascloud-db-redis
+192.168.137.4 paascloud-mq-rabbit
+192.168.137.4 paascloud-mq-rocket
+192.168.137.140 paascloud-provider-zk
 
 192.168.241.101 paascloud-zk-01
 192.168.241.102 paascloud-zk-02
