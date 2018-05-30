@@ -105,7 +105,7 @@ git clone https://github.com/172226325/paascloud-doc.git
 git clone https://github.com/172226325/paascloud-config-repo.git
 git clone https://github.com/172226325/paascloud-mall-web.git
 
-
+clean install -DskipTests
 
 
 
