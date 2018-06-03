@@ -109,6 +109,9 @@ clean install -DskipTests
 
 
 
+npm install (这个如果失败的话，执行npm cache clean --force之后再重试)
+npm run dev
+
 相关pull request操作（来源网络资料）：
 登录git hub 进入相关的项目页，点击fork，然后在自己的账号下会根据该项目创建出一个仓库
 ~  git clone https://github.com/172226325/paascloud-master.git   //克隆一个仓库到本地
