@@ -112,6 +112,23 @@ clean install -DskipTests
 npm install (这个如果失败的话，执行npm cache clean --force之后再重试)
 npm run dev
 
+相关pull request操作（来源网络资料）：
+登录git hub 进入相关的项目页，点击fork，然后在自己的账号下会根据该项目创建出一个仓库
+~  git clone https://github.com/172226325/paascloud-master.git   //克隆一个仓库到本地
+~  git add xxx                                                                   //进行一些修改 
+~  git commit -m "xxx"                                                    //提交
+~  git push origin master                                                //推送至远程仓库
+然后进入github，到自己fork出项目对应的页面
+  点击new pull request，在弹出的页面中，使用create pull request即可进行pull request操作
+
+设置fork项目的同步更新：
+  git remote add upstream https://github.com/paascloud/paascloud-master.git  //也就是将被fork的仓库作为其上游仓库
+  git remote -v  //查看状态
+  git fetch upstream  //执行fork项目的同步
+  git checkout master  //切换到当前master分支
+  git merge upstream/master  //将上游分支的内容合并到本地master
+
+
 
 
 
