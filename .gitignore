@@ -61,3 +61,4 @@ paascloud-zipkin/target/
 paascloud-generator/paascloud-generator-mdc/target/
 LOG_PATH_IS_UNDEFINEDLOG_FILE_IS_UNDEFINED
 build/
+.DS_Store
