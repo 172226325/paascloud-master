@@ -78,6 +78,8 @@ public class MD5Test {
 		log.info("salt.length={}", salt.length());
 		String encrypt = Md5Util.encrypt("123456");
 		log.info(encrypt);
+
+		System.out.println(Md5Util.encrypt("18500916959"));
 	}
 
 }  

@@ -20,11 +20,13 @@
 127.0.0.1 paascloud-provider-opc
 
 
+
+
 192.168.137.4 paascloud-db-mysql
 192.168.137.172 paascloud-db-redis
 192.168.137.4 paascloud-mq-rabbit
 192.168.137.4 paascloud-mq-rocket
-192.168.137.140 paascloud-provider-zk
+127.0.0.1 paascloud-provider-zk
 
 192.168.241.101 paascloud-zk-01
 192.168.241.102 paascloud-zk-02
@@ -79,7 +81,12 @@ server {
         root   html;
     }
 }
+注意：
+  添加nginx配置之后，如果无法启动，需要在http部分加入配置：server_names_hash_bucket_size 64;
 
+
+启动本地nginx、zookeeper
+启动虚拟机：database03、nexus、redis02
 
 微服务启动顺序
 
@@ -89,7 +96,8 @@ server {
 4. paascloud-gateway
 5. 剩下微服务无启动数序要求
 
-
+系统登录密码：
+  admin 123456
 
 
 https://github.com/paascloud/paascloud-master
@@ -115,7 +123,7 @@ npm run dev
 相关pull request操作（来源网络资料）：
 登录git hub 进入相关的项目页，点击fork，然后在自己的账号下会根据该项目创建出一个仓库
 ~  git clone https://github.com/172226325/paascloud-master.git   //克隆一个仓库到本地
-~  git add xxx                                                                   //进行一些修改 
+~  git add xxx                                                                   //进行一些修改
 ~  git commit -m "xxx"                                                    //提交
 ~  git push origin master                                                //推送至远程仓库
 然后进入github，到自己fork出项目对应的页面
@@ -130,9 +138,86 @@ npm run dev
 
 
 
+rabbit mq注意点：
+  注意在admin选项卡中点击用户进行授权
+
+注意配置中心的配置，当使用dev分支配置的时候，由于我的git上面没有在dev分支上的配置，导致其它服务死活起不起来。
 
 
+mysql连接上限问题：
+  vi /etc/my.cnf，按如下编辑
+    max_connections = 1000
+  service mysqld stop
+  service mysqld status
+  service mysqld start
 
+项目结构：
 
-
+├─paascloud-master----------------------------父项目，公共依赖
+│  │
+│  ├─paascloud-eureka--------------------------微服务注册中心
+│  │
+│  ├─paascloud-discovery-----------------------微服务配置中心
+│  │
+│  ├─paascloud-monitor-------------------------微服务监控中心
+│  │
+│  ├─paascloud-zipkin--------------------------微服务日志采集中心
+│  │
+│  ├─paascloud-gateway--------------------------微服务网关中心
+│  │
+│  ├─paascloud-provider
+│  │  │
+│  │  ├─paascloud-provider-mdc------------------数据服务中心
+│  │  │
+│  │  ├─paascloud-provider-omc------------------订单服务中心
+│  │  │
+│  │  ├─paascloud-provider-opc------------------对接服务中心
+│  │  │
+│  │  ├─paascloud-provider-tpc------------------任务服务中心
+│  │  │
+│  │  └─paascloud-provider-uac------------------用户服务中心
+│  │
+│  ├─paascloud-provider-api
+│  │  │
+│  │  ├─paascloud-provider-mdc-api------------------数据服务中心API
+│  │  │
+│  │  ├─paascloud-provider-omc-api------------------订单服务中心API
+│  │  │
+│  │  ├─paascloud-provider-opc-api------------------对接服务中心API
+│  │  │
+│  │  ├─paascloud-provider-tpc-api------------------任务服务中心API
+│  │  │
+│  │  ├─paascloud-provider-sdk-api------------------可靠消息服务API
+│  │  │
+│  │  └─paascloud-provider-uac-api------------------用户服务中心API
+│  │
+│  ├─paascloud-common
+│  │  │
+│  │  ├─paascloud-common-base------------------公共POJO基础包
+│  │  │
+│  │  ├─paascloud-common-config------------------公共配置包
+│  │  │
+│  │  ├─paascloud-common-core------------------微服务核心依赖包
+│  │  │
+│  │  ├─paascloud-common-util------------------公共工具包
+│  │  │
+│  │  ├─paascloud-common-zk------------------zookeeper配置
+│  │  │
+│  │  ├─paascloud-security-app------------------公共无状态安全认证
+│  │  │
+│  │  ├─paascloud-security-core------------------安全服务核心包
+│  │  │
+│  │  └─paascloud-security-feign------------------基于auth2的feign配置
+│  │
+│  ├─paascloud-generator
+│  │  │
+│  │  ├─paascloud-generator-mdc------------------数据服务中心Mybatis Generator
+│  │  │
+│  │  ├─paascloud-generator-omc------------------数据服务中心Mybatis Generator
+│  │  │
+│  │  ├─paascloud-generator-opc------------------数据服务中心Mybatis Generator
+│  │  │
+│  │  ├─paascloud-generator-tpc------------------数据服务中心Mybatis Generator
+│  │  │
+│  │  └─paascloud-generator-uac------------------数据服务中心Mybatis Generator
 

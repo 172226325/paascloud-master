@@ -9,8 +9,8 @@ spring:
   rabbitmq:
     host: paascloud-mq-rabbit
     port: 5672
-    username: guest
-    password: guest
+    username: admin
+    password: 123456
   boot:
     admin:
       username: admin
@@ -20,6 +20,8 @@ security:
   user:
     name: admin
     password: admin
+
+
 
 info:
   软件著作权: paascloud快速搭建企业级分布式微服务平台
